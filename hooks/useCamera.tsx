@@ -4,7 +4,7 @@ import {
   Camera,
   useCameraDevices,
   useFrameProcessor,
-} from 'react-native-vision-camera';
+} from 'react-natcameraive-vision-';
 
 import Animated, {
   useAnimatedProps,

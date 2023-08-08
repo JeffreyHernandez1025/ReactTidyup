@@ -11,8 +11,8 @@ function NfcDropDown() {
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState(null);
   const [items, setItems] = useState([
-    {label: 'Tops', value: 'Shirt'},
-    {label: 'Bottoms', value: 'Pants'},
+    {label: 'Shirt', value: 'Shirt'},
+    {label: 'Sweater', value: 'Sweater'},
   ]);
 
 
@@ -29,9 +29,6 @@ function NfcDropDown() {
       setItems={setItems}
       placeholder='Category'
       // use this to put selected item in variable for pants or shirt
-      onSelectItem= {(labelcool) => {
-         if(labelcool.value === "cool"){writeNFCS()}
-      }}
       style={{
         borderRadius: 15, top: 35, height: 58, width: 343, alignSelf: "center",  borderStyle: "solid",
         borderWidth: 1,

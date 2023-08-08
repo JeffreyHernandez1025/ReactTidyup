@@ -356,7 +356,6 @@ export default StyleSheet.create({
         textAlign: "center",
         fontSize: 40,
         Top: 10,
-
     },
     scanNfcButtonText:{
         color: "#91C8FF",
@@ -364,11 +363,8 @@ export default StyleSheet.create({
         alignSelf: "center",
         top: 5,
         fontFamily: "Georgia"
-
-        
     },
     scanNfcButton:{
-
         width: "88%",
         alignSelf: "center",
         borderStyle: "solid",
@@ -377,10 +373,6 @@ export default StyleSheet.create({
         borderWidth: 1,
         height: 65,
         top: 1,
-        
-        
-        
-
     },
     addTagText:{
         fontSize: 20, 
@@ -419,6 +411,7 @@ export default StyleSheet.create({
         width: 343,
         height: 58,
         backgroundColor: 'white',
+        paddingLeft: 10,
     },
     writeNfcButtonName:{
         color:"#91C8FF",
@@ -434,7 +427,7 @@ export default StyleSheet.create({
 
 
 
-    ///DOnate Styles
+    //Donate Styles
     donateContainer: {
         position: "relative",
         height: 125,

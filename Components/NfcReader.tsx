@@ -15,7 +15,7 @@ import Add from '../assets/images/addimg.png'
 import Exit from '../assets/images/Exit.png'
 
 
-export default function NfcReader({navigation}): JSX.Element {
+export default function NfcReader({ navigation }): JSX.Element {
   const [nfc, setNfc] = useState<Boolean>(false);
 
 
@@ -90,7 +90,9 @@ export default function NfcReader({navigation}): JSX.Element {
     <View>
       {/* Page Container */}
       <View style={styles.scanBackground}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => {
+          
+        }}>
           <Image source={Add} style={styles.addImage} />
         </TouchableOpacity>
       </View>
@@ -105,25 +107,25 @@ export default function NfcReader({navigation}): JSX.Element {
         {/* Add Tag Container */}
 
         <View>
-          <View style={{flexDirection: 'row'}}>
+          <View style={{ flexDirection: 'row' }}>
             <Text style={styles.addTagText}> Add Hanger</Text>
             <TouchableOpacity onPress={() => {
               navigation.navigate('Home')
               console.log('tapped')
             }}
-            style={{top: 37, left: 240}}
+              style={{ top: 37, left: 240 }}
             >
-            <Image source={Exit} style={styles.exitNFC} />
+              <Image source={Exit} style={styles.exitNFC} />
             </TouchableOpacity>
           </View>
-          <View style={{top: 42}} >
-          <NfcDropDown />
+          <View style={{ top: 42 }} >
+            <NfcDropDown />
           </View>
           <View>
           </View>
           {/* Name Input */}
           <View>
-            <TextInput placeholder='Name' placeholderTextColor='#61646B' style={styles.writeNfcButtonInput} value=''/>
+            <TextInput placeholder='Name' placeholderTextColor='#61646B' style={styles.writeNfcButtonInput} value='' />
           </View>
           {/* Done Button Container */}
           <View>
