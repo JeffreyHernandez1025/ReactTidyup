@@ -30,7 +30,7 @@ function NfcDropDown() {
       placeholder='Category'
       // use this to put selected item in variable for pants or shirt
       style={{
-        borderRadius: 15, top: 35, height: 58, width: 343, alignSelf: "center",  borderStyle: "solid",
+        borderRadius: 15, height: 58, width: 343, alignSelf: "center",  borderStyle: "solid",
         borderWidth: 1,
       }}
       textStyle={{

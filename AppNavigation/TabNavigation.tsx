@@ -8,7 +8,6 @@ import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import DonateLogo from "../assets/images/donateLogo.png";
 import {
   Text,
   View,
@@ -27,7 +26,8 @@ export default function TabNaviagtion(): JSX.Element {
         component={Tracking}
         options={{
           tabBarLabel: 'Home',
-          tabBarIcon: ({color}) => <Icon name="home" size={30} color={color} />,
+          tabBarIcon: ({color}) => 
+          <Image source={require('../assets/images/home.png')} style={{height: 24, width: 24, color: color}} />,
           headerShown: false,
         }}
       />
@@ -39,7 +39,7 @@ export default function TabNaviagtion(): JSX.Element {
           headerShown: false,
           tabBarLabel: 'Add',
           tabBarIcon: ({color}) => (
-            <MaterialCommunityIcons name="plus-circle" size={30} color={color} />
+            <Image source={require('../assets/images/Add.png')} style={{height: 24, width: 24, color: color}} />
           ),
         }}
         listeners={({navigation}) => ({
@@ -55,8 +55,7 @@ export default function TabNaviagtion(): JSX.Element {
         options={{
           tabBarLabel: 'Donate',
           tabBarIcon: ({color}) => (
-            <Image source={DonateLogo} style={{width: 30, height:30, color: "black", 
-            }} />
+            <Image source={require('../assets/images/DonateLogo.png')} style={{width: 24, height: 24, color: color}} />
           ),
           headerShown: false,
         }}
