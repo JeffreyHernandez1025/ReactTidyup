@@ -111,12 +111,14 @@ export default function NfcReader({navigation}): JSX.Element {
               navigation.navigate('Home')
               console.log('tapped')
             }}
-            style={{top: 37, left: 240, backgroundColor: 'red'}}
+            style={{top: 37, left: 240}}
             >
             <Image source={Exit} style={styles.exitNFC} />
             </TouchableOpacity>
           </View>
+          <View style={{top: 42}} >
           <NfcDropDown />
+          </View>
           <View>
           </View>
           {/* Name Input */}
@@ -128,7 +130,7 @@ export default function NfcReader({navigation}): JSX.Element {
             <TouchableOpacity
               onPress={writeNFC}
               style={styles.writeToNfcDoneButton}>
-              <Text style={styles.writeToNfcButtonText}>Done Button</Text>
+              <Text style={styles.writeToNfcButtonText}>Done</Text>
             </TouchableOpacity>
           </View>
 

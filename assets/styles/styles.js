@@ -390,24 +390,23 @@ export default StyleSheet.create({
     },
     writeToNfcButtonText:{
         color: "white",
-        fontSize: 40,
+        fontSize: 16,
         alignSelf: "center",
         fontFamily:"Inter",
-        position: "absolute",
-        top: 10,
-
+        fontWeight: '400'
     },
     writeToNfcDoneButton:{
-        width: "88%",
+        width: 343,
         alignSelf: "center",
-        height: 65,
+        height: 58,
         borderStyle: "solid",
         borderRadius: "15%",
         borderColor: "#91C8FF",
         borderWidth: 1,
         backgroundColor: "#91C8FF",
         position: "absolute",
-        bottom: -230,
+        bottom: -343,
+        justifyContent: 'center'
     },
     writeNfcButtonInput:{
         color:"black",
@@ -415,11 +414,11 @@ export default StyleSheet.create({
         borderRadius: "15%",
         borderWidth: 1,
         position: "absolute",
-        top: 65,
+        top: 148,
         alignSelf: "center",
-        width: "88%",
-        height: 60,
-        fontFamily: "Inter"
+        width: 343,
+        height: 58,
+        backgroundColor: 'white',
     },
     writeNfcButtonName:{
         color:"#91C8FF",
