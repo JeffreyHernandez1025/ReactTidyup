@@ -6,9 +6,9 @@ import {
     View,
     Image,
     TouchableOpacity,
-    ScrollView
 } from 'react-native';
 import ItemModal from './ItemModal';
+import { ScrollView } from 'react-native-gesture-handler';
 
 function ClothingCard(props) {
 
@@ -23,33 +23,62 @@ function ClothingCard(props) {
     if (props.category === 'Least') {
         return (
             <ScrollView horizontal>
-                {props.clothesFlatList
-                    .sort((a, b) => a.counter - b.counter)
-                    .map((item, index) => (
-                        <View style={{ margin: 12 }} key={index}>
-                            <TouchableOpacity
-                                onPress={() => {
-                                    // setModalVisible(!modalVisible)
-                                    toggleModal(index);
-                                }}>
-                                <View key={item.id}>
-                                    <Image
-                                        style={styles.imageLeastUse}
-                                        source={{ uri: item.src }}
-                                        resizeMode="contain"
-                                    />
-                                    <Text style={styles.listCounter}> {item.counter} </Text>
-                                    <View
-                                        style={{
-                                            backgroundColor: '#8BD5FF',
-                                            height: 35,
-                                            borderBottomLeftRadius: 15,
-                                            borderBottomRightRadius: 15,
-                                        }}>
-                                        <View style={{ flex: 1, flexDirection: 'column' }}>
-                                            <Text style={styles.clothesName}> {item.Name} </Text>
-                                            <Text style={styles.clothesID}> {item.id} </Text>
-                                        </View>
+                {props.clothesFlatList.sort((a, b) => a.counter - b.counter).map((item, index) => (
+                    <View style={{ margin: 12 }} key={index}>
+
+                        <TouchableOpacity onPress={() => {
+                            // setModalVisible(!modalVisible)
+                            toggleModal(index)
+                        }}>
+                            <Image
+                                style={styles.imageLeastUse}
+                                source={{ uri: item.src }}
+                                resizeMode="contain"
+                            />
+                            <Text style={styles.listCounter}> {item.counter} </Text>
+                            <View style={{ backgroundColor: '#8BD5FF', height: 35, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
+                                <View style={{ flex: 1, flexDirection: 'column' }}>
+                                    <Text style={styles.clothesName}> {item.Name} </Text>
+                                    <Text style={styles.clothesID}> {item.id} </Text>
+                                </View>
+                            </View>
+                        </TouchableOpacity>
+
+                        <ItemModal
+                            modalVisible={modalVisibilities[index]}
+                            setModalVisible={() => toggleModal(index)}
+                            item={item}
+                            name={item.Name}
+                            navigation = {props.navigation}
+                            donate={false}
+                            setDonateVisible={props.setDonateVisible}
+                        />
+
+                    </View>
+                ))}
+            </ScrollView>
+        )
+    } else if (props.category === 'Shirt') {
+        return (
+            <ScrollView horizontal>
+                {props.clothesFlatList.map((item, index) => (
+                    <View>
+                        {item.category === 'Shirts' ? <View style={{ margin: 12 }} key={index}>
+
+                            <TouchableOpacity onPress={() => {
+                                // setModalVisible(!modalVisible)
+                                toggleModal(index)
+                            }}>
+                                <Image
+                                    style={styles.imageLeastUse}
+                                    source={{ uri: item.src }}
+                                    resizeMode="contain"
+                                />
+                                <Text style={styles.listCounter}> {item.counter} </Text>
+                                <View style={{ backgroundColor: '#8BD5FF', height: 35, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
+                                    <View style={{ flex: 1, flexDirection: 'column' }}>
+                                        <Text style={styles.clothesName}> {item.Name} </Text>
+                                        <Text style={styles.clothesID}> {item.id} </Text>
                                     </View>
                                 </View>
                             </TouchableOpacity>
@@ -59,108 +88,56 @@ function ClothingCard(props) {
                                 setModalVisible={() => toggleModal(index)}
                                 item={item}
                                 name={item.Name}
-                                navigation={props.navigation}
-                                donate={false}
-                                setDonateVisible={props.setDonateVisible}
+                                navigation = {props.navigation}
+                                setDonateVisible = {props.setDonateVisible}
+                                donate = {false}
                             />
-                        </View>
-                    ))}
-            </ScrollView>
-        );
-    } else if (props.category === 'Shirt') {
-        return (
-            <ScrollView horizontal>
-                {props.clothesFlatList.map((item, index) => (
-                    <View key={item.id}>
-                        {item.category === 'Shirts' ? (
-                            <View style={{ margin: 12 }} key={index}>
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        // setModalVisible(!modalVisible)
-                                        toggleModal(index);
-                                    }}>
-                                    <Image
-                                        style={styles.imageLeastUse}
-                                        source={{ uri: item.src }}
-                                        resizeMode="contain"
-                                    />
-                                    <Text style={styles.listCounter}> {item.counter} </Text>
-                                    <View
-                                        style={{
-                                            backgroundColor: '#8BD5FF',
-                                            height: 35,
-                                            borderBottomLeftRadius: 15,
-                                            borderBottomRightRadius: 15,
-                                        }}>
-                                        <View style={{ flex: 1, flexDirection: 'column' }}>
-                                            <Text style={styles.clothesName}> {item.Name} </Text>
-                                            <Text style={styles.clothesID}> {item.id} </Text>
-                                        </View>
-                                    </View>
-                                </TouchableOpacity>
 
-                                <ItemModal
-                                    modalVisible={modalVisibilities[index]}
-                                    setModalVisible={() => toggleModal(index)}
-                                    item={item}
-                                    name={item.Name}
-                                    navigation={props.navigation}
-                                    setDonateVisible={props.setDonateVisible}
-                                    donate={false}
-                                />
-                            </View>
-                        ) : null}
+                        </View> : null}
                     </View>
                 ))}
             </ScrollView>
-        );
+        )
     } else if (props.category === 'Sweater') {
         return (
             <ScrollView horizontal>
                 {props.clothesFlatList.map((item, index) => (
-                    <View key={item.id}>
-                        {item.category === 'Sweater' ? (
-                            <View style={{ margin: 12 }} key={index}>
-                                <TouchableOpacity
-                                    onPress={() => {
-                                        // setModalVisible(!modalVisible)
-                                        toggleModal(index);
-                                    }}>
-                                    <Image
-                                        style={styles.imageLeastUse}
-                                        source={{ uri: item.src }}
-                                        resizeMode="contain"
-                                    />
-                                    <Text style={styles.listCounter}> {item.counter} </Text>
-                                    <View
-                                        style={{
-                                            backgroundColor: '#8BD5FF',
-                                            height: 35,
-                                            borderBottomLeftRadius: 15,
-                                            borderBottomRightRadius: 15,
-                                        }}>
-                                        <View style={{ flex: 1, flexDirection: 'column' }}>
-                                            <Text style={styles.clothesName}> {item.Name} </Text>
-                                            <Text style={styles.clothesID}> {item.id} </Text>
-                                        </View>
-                                    </View>
-                                </TouchableOpacity>
+                    <View>
+                        {item.category === 'Sweater' ? <View style={{ margin: 12 }} key={index}>
 
-                                <ItemModal
-                                    modalVisible={modalVisibilities[index]}
-                                    setModalVisible={() => toggleModal(index)}
-                                    item={item}
-                                    name={item.Name}
-                                    navigation={props.navigation}
-                                    setDonateVisible={props.setDonateVisible}
-                                    donate={false}
+                            <TouchableOpacity onPress={() => {
+                                // setModalVisible(!modalVisible)
+                                toggleModal(index)
+                            }}>
+                                <Image
+                                    style={styles.imageLeastUse}
+                                    source={{ uri: item.src }}
+                                    resizeMode="contain"
                                 />
-                            </View>
-                        ) : null}
+                                <Text style={styles.listCounter}> {item.counter} </Text>
+                                <View style={{ backgroundColor: '#8BD5FF', height: 35, borderBottomLeftRadius: 15, borderBottomRightRadius: 15 }}>
+                                    <View style={{ flex: 1, flexDirection: 'column' }}>
+                                        <Text style={styles.clothesName}> {item.Name} </Text>
+                                        <Text style={styles.clothesID}> {item.id} </Text>
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
+                            <ItemModal
+                                modalVisible={modalVisibilities[index]}
+                                setModalVisible={() => toggleModal(index)}
+                                item={item}
+                                name={item.Name}
+                                navigation = {props.navigation}
+                                setDonateVisible = {props.setDonateVisible}
+                                donate={false}
+                            />
+
+                        </View> : null}
                     </View>
                 ))}
             </ScrollView>
-        );
+        )
     }
 
     return null

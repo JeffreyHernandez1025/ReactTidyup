@@ -17,8 +17,10 @@ import Exit from '../assets/images/Exit.png'
 
 export default function NfcReader({ navigation }): JSX.Element {
   const [nfc, setNfc] = useState<Boolean>(false);
-  const [img, setImg] = useState(false)
-  const [text, onChangeText] = useState('')
+
+
+
+
 
   // checks if the device supports NFC
   useEffect(() => {
@@ -87,15 +89,23 @@ export default function NfcReader({ navigation }): JSX.Element {
   return (
     <View>
       {/* Page Container */}
-      <View style={[styles.scanBackground, {backgroundColor: img ? 'white' : '#D9D9D9', justifyContent: img ? 'flex-end' : 'center'}]}>
-        {img ? <Image source={{uri: 'https://is4.revolveassets.com/images/p4/n/z/NIKR-MS3_V1.jpg'}} style={{height: 380, width: 320, alignSelf:'center'}} /> : <TouchableOpacity onPress={() => {
-          setImg(true)
+      <View style={styles.scanBackground}>
+        <TouchableOpacity onPress={() => {
+          
         }}>
           <Image source={Add} style={styles.addImage} />
-        </TouchableOpacity>}
+        </TouchableOpacity>
       </View>
-
+      {/* put image above scan code  */}
+      {/* Scan And Write container */}
       <View style={styles.scanAndWriteContainer}>
+        {/* Scan Tag Container */}
+        <View>
+          <View>
+          </View>
+        </View>
+        {/* Add Tag Container */}
+
         <View>
           <View style={{ flexDirection: 'row' }}>
             <Text style={styles.addTagText}> Add Hanger</Text>
@@ -108,15 +118,14 @@ export default function NfcReader({ navigation }): JSX.Element {
               <Image source={Exit} style={styles.exitNFC} />
             </TouchableOpacity>
           </View>
-          <View>
-            <TextInput placeholder='Name' placeholderTextColor='#61646B' style={styles.writeNfcButtonInput} value={text} onChangeText={onChangeText} />
+          <View style={{ top: 42 }} >
+            <NfcDropDown />
           </View>
           <View>
           </View>
           {/* Name Input */}
-
-          <View style={{ top: 195 }} >
-            <NfcDropDown />
+          <View>
+            <TextInput placeholder='Name' placeholderTextColor='#61646B' style={styles.writeNfcButtonInput} value='' />
           </View>
           {/* Done Button Container */}
           <View>

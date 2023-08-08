@@ -333,6 +333,7 @@ export default StyleSheet.create({
         marginTop: 5
     },
     scanBackground:{
+        backgroundColor: "#D9D9D9",
         width: "100%",
         height: 409,
         justifyContent: 'center'
@@ -391,7 +392,7 @@ export default StyleSheet.create({
         alignSelf: "center",
         height: 58,
         borderStyle: "solid",
-        borderRadius: 15,
+        borderRadius: "15%",
         borderColor: "#91C8FF",
         borderWidth: 1,
         backgroundColor: "#91C8FF",
@@ -402,10 +403,10 @@ export default StyleSheet.create({
     writeNfcButtonInput:{
         color:"black",
         borderStyle: "solid",
-        borderRadius: 15,
+        borderRadius: "15%",
         borderWidth: 1,
         position: "absolute",
-        top: 80,
+        top: 148,
         alignSelf: "center",
         width: 343,
         height: 58,
