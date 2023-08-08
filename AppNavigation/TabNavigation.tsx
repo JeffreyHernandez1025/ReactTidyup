@@ -37,7 +37,7 @@ export default function TabNaviagtion(): JSX.Element {
         options={{
           // Make a onpress to make it call the function like line 76 in NfcReader component
           headerShown: false,
-          tabBarLabel: 'NFC',
+          tabBarLabel: 'Add',
           tabBarIcon: ({color}) => (
             <MaterialCommunityIcons name="plus-circle" size={30} color={color} />
           ),
