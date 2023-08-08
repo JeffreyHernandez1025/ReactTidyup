@@ -110,7 +110,7 @@ export default function NfcReader({ navigation }): JSX.Element {
           <View style={{ flexDirection: 'row' }}>
             <Text style={styles.addTagText}> Add Hanger</Text>
             <TouchableOpacity onPress={() => {
-              navigation.navigate('Home')
+              navigation.navigate('Welcome!')
               console.log('tapped')
             }}
               style={{ top: 37, left: 240 }}

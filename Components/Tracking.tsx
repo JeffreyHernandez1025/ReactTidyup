@@ -1,46 +1,50 @@
 // @ts-nocheck
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  Image,
-
-} from 'react-native';
+import {Text, View, TouchableOpacity, Image} from 'react-native';
 import styles from '../assets/styles/styles';
 import useClothesFlatList from '../hooks/useClothes';
 import ClothingCard from './ClothingCard';
-import See from '../assets/images/view.png'
+import See from '../assets/images/view.png';
 
-export default function Tracking({ navigation }) {
+export default function Tracking({navigation}) {
   // object destructuring
-  const { clothesFlatList, setClothesFlatList, donateVisible, setDonateVisible } = useClothesFlatList();
-
+  const {clothesFlatList, setClothesFlatList, donateVisible, setDonateVisible} =
+    useClothesFlatList();
 
   return (
     <View style={styles.container}>
-      <View style={styles.logoContainer}>
-        <Text style={styles.header} > Welcome! </Text>
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          margin: 10
+        }}>
+        <Text style={styles.leastused}> Least Used</Text>
+        <TouchableOpacity>
+          <Image source={See} style={styles.viewAll} />
+        </TouchableOpacity>
       </View>
-
-      <View style={styles.leastUseList}>
-        <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'center' }}>
-          <Text style={styles.leastused}> Least Used</Text>
-          <TouchableOpacity>
-            <Image source={See} style={{ width: 123, height: 25, left: 130, top: -10 }} />
-          </TouchableOpacity>
-        </View>
-
+      <View>
         <ClothingCard
           setClothesFlatList={setClothesFlatList}
           clothesFlatList={clothesFlatList}
           navigation={navigation}
           donateVisible={donateVisible}
           setDonateVisible={setDonateVisible}
-          category='Least'
+          category="Least"
         />
       </View>
-      {/* move this correctly */}
-      <Text style={styles.shirts}> Shirts</Text>
+
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          margin: 10
+        }}>
+        <Text style={styles.leastused}> Shirts</Text>
+      </View>
+
       <View style={styles.shirtsList}>
         <ClothingCard
           setClothesFlatList={setClothesFlatList}
@@ -48,21 +52,29 @@ export default function Tracking({ navigation }) {
           navigation={navigation}
           donateVisible={donateVisible}
           setDonateVisible={setDonateVisible}
-          category='Shirt'
+          category="Shirt"
         />
       </View>
-      <View>
-        <Text style={styles.pants}> Sweaters </Text>
-        <View style={styles.pantsList}>
-          <ClothingCard
-            setClothesFlatList={setClothesFlatList}
-            clothesFlatList={clothesFlatList}
-            navigation={navigation}
-            donateVisible={donateVisible}
-            setDonateVisible={setDonateVisible}
-            category='Sweater'
-          />
-        </View>
+
+      <View
+        style={{
+          display: 'flex',
+          flexDirection: 'row',
+          justifyContent: 'space-between',
+          margin: 10
+        }}>
+        <Text style={styles.leastused}> Sweaters</Text>
+      </View>
+
+      <View style={styles.pantsList}>
+        <ClothingCard
+          setClothesFlatList={setClothesFlatList}
+          clothesFlatList={clothesFlatList}
+          navigation={navigation}
+          donateVisible={donateVisible}
+          setDonateVisible={setDonateVisible}
+          category="Sweater"
+        />
       </View>
     </View>
   );

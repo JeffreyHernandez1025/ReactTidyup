@@ -14,12 +14,22 @@ export default function TabNaviagtion(): JSX.Element {
   return (
     <Tabs.Navigator>
       <Tabs.Screen
-        name="Home"
+        name="Welcome!"
         component={Tracking}
         options={{
-          tabBarLabel: 'Home',
+          tabBarShowLabel: false,
+          headerTitleStyle: {
+            fontSize: 35,
+            fontWeight: 'bold',
+          },
+          headerTitleAlign: 'left',
+          headerBackgroundContainerStyle: {
+            shadowColor: 'black',
+            shadowOffset: {width: -2, height: 4},
+            shadowOpacity: 0.5,
+            shadowRadius: 3,
+          },
           tabBarIcon: ({color}) => <Icon name="home" size={30} color={color} />,
-          headerShown: false,
         }}
       />
       <Tabs.Screen
@@ -34,10 +44,10 @@ export default function TabNaviagtion(): JSX.Element {
           ),
         }}
         listeners={({navigation}) => ({
-          tabPress: event =>{
-            event.preventDefault()
-            navigation.navigate('NFC')
-          }
+          tabPress: event => {
+            event.preventDefault();
+            navigation.navigate('NFC');
+          },
         })}
       />
       <Tabs.Screen
