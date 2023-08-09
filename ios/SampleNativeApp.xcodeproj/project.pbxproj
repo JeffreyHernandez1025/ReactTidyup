@@ -11,6 +11,8 @@
 		0C80B921A6F3F58F76C31292 /* libPods-SampleNativeApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-SampleNativeApp.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		32329DA42A835A8F003BDA99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		32329DA52A835AF4003BDA99 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		7699B88040F8A987B510C191 /* libPods-SampleNativeApp-SampleNativeAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-SampleNativeApp-SampleNativeAppTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		EFAC8BEE2A6EFC7A00CC74A3 /* FontAwesome5_Brands.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EFAC8BDB2A6EFC7A00CC74A3 /* FontAwesome5_Brands.ttf */; };
@@ -340,6 +342,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32329DA52A835AF4003BDA99 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -356,6 +359,7 @@
 				EFAC8BFC2A6EFC7A00CC74A3 /* Feather.ttf in Resources */,
 				EFAC8BF52A6EFC7A00CC74A3 /* Ionicons.ttf in Resources */,
 				EFAC8BF82A6EFC7A00CC74A3 /* Zocial.ttf in Resources */,
+				32329DA42A835A8F003BDA99 /* Images.xcassets in Resources */,
 				EFAC8BF22A6EFC7A00CC74A3 /* Entypo.ttf in Resources */,
 				EFAC8BEE2A6EFC7A00CC74A3 /* FontAwesome5_Brands.ttf in Resources */,
 				EFAC8BF62A6EFC7A00CC74A3 /* FontAwesome5_Solid.ttf in Resources */,
@@ -609,6 +613,7 @@
 			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-SampleNativeApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SampleNativeApp/SampleNativeApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
@@ -640,6 +645,7 @@
 			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-SampleNativeApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = SampleNativeApp/SampleNativeApp.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
